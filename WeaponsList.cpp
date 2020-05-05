@@ -5,7 +5,6 @@
 #include <sstream>
 #include <iostream>
 
-
 // Constructor
 WeaponsList::WeaponsList()
 {
