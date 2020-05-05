@@ -7,10 +7,15 @@ main: main.o CharactersList.o WeaponsList.o Character.o Weapon.o
 main.o: main.cpp CharactersList.h WeaponsList.h Character.h Weapon.h
 	$(CXX) $(CXXFLAGS) -c main.cpp
 
-CharactersList.o: CharactersList.h Character.h
+%.0: %.h
 
-Character.o: Character.h Weapon.h
+#CharactersList.o: CharactersList.h Character.h
 
-Weapon.o: Weapon.h
+#Character.o: Character.h Weapon.h
 
-WeaponsList.o: WeaponsList.h Weapon.h
+#Weapon.o: Weapon.h
+
+#WeaponsList.o: WeaponsList.h Weapon.h
+
+clean:
+	rm main *.o
