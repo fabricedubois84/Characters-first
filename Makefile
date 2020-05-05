@@ -1,21 +1,21 @@
 CXX = g++
 CXXFLAGS = -std=c++11 -Wall -g
+SRCS = main.cpp Character.cpp CharactersList.cpp Weapon.cpp WeaponsList.cpp
+OBJS = $(SRCS:.cpp=.o)
 
-main: main.o CharactersList.o WeaponsList.o Character.o Weapon.o
-	$(CXX) $(CXXFLAGS) -o main main.o CharactersList.o WeaponsList.o Character.o Weapon.o
+EXEC = myGame
 
-main.o: main.cpp CharactersList.h WeaponsList.h Character.h Weapon.h
-	$(CXX) $(CXXFLAGS) -c main.cpp
+all: $(EXEC)
+	@echo $(EXEC) has been compiled
 
-%.0: %.h
+$(EXEC): $(OBJS) 
+	$(CXX) $(CXXFLAGS) -o $(EXEC) $(OBJS)
 
-#CharactersList.o: CharactersList.h Character.h
-
-#Character.o: Character.h Weapon.h
-
-#Weapon.o: Weapon.h
-
-#WeaponsList.o: WeaponsList.h Weapon.h
+.cpp.o:
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm main *.o
+	$(RM) $(EXEC) *.o
+
+depend: $(SRCS)
+	makedepend $^
