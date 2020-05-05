@@ -9,6 +9,7 @@
 
 class Character
 {
+protected:
     std::string m_name;
     int m_health;
     Weapon *m_weapon;
