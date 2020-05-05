@@ -1,8 +1,8 @@
 #include "Weapon.h"
+#include "WeaponsList.h"
 #include <iostream>
 #include <vector>
 #include <string>
-#include "WeaponsList.h"
 
 // Constructor
 

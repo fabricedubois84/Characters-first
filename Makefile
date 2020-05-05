@@ -1,5 +1,7 @@
 CXX = g++
 CXXFLAGS = -std=c++11 -Wall -g
+INCLUDES = -I./includes
+#LFLAGS = -L../includes
 SRCS = main.cpp Character.cpp CharactersList.cpp Weapon.cpp WeaponsList.cpp
 OBJS = $(SRCS:.cpp=.o)
 
@@ -9,13 +11,15 @@ all: $(EXEC)
 	@echo $(EXEC) has been compiled
 
 $(EXEC): $(OBJS) 
-	$(CXX) $(CXXFLAGS) -o $(EXEC) $(OBJS)
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -o $(EXEC) $(OBJS) 
+# $(LFLAGS) at the end of above line
 
 .cpp.o:
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
-	$(RM) $(EXEC) *.o
+	$(RM) *.o *~ $(EXEC)
 
 depend: $(SRCS)
-	makedepend $^
+	makedepend $(INCLUDES) $^
+
