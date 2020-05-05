@@ -9,11 +9,11 @@ class Barbarian : Character
     int m_rage;
 
 public:
-    Barbarian(std::string name, int health);
+    Barbarian(std::string name, int health = 100);
 
-    ~Barbarian();
+     ~Barbarian();
 
-    void presentation();
+    virtual void presentation() const;
 
 };
 

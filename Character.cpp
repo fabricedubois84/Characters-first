@@ -32,9 +32,10 @@ Character::~Character()
 {
     m_weapon = 0;
     delete m_weapon;
+    std::cout << "Character object destroyed\n";
 }
 
-void Character::presentation()
+void Character::presentation() const
 {
     std::cout << "=======================\n";
     std::cout << "Character profile\n";
@@ -45,7 +46,6 @@ void Character::presentation()
     std::cout << "\t- " << m_weapon->get_name() << "\n";
     std::cout << "\t- " << m_weapon->get_damage() << "\n";
     std::cout << "\t- " << m_weapon->get_description() << "\n";
-    std::cout << "=======================\n";
 
 }
 

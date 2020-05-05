@@ -23,9 +23,9 @@ public:
 //    Character(std::vector<std::string> &characterArray);
 
     // Destructor
-    ~Character();
+     ~Character();
 
-    void presentation();
+    virtual void presentation() const;
 
     // Getters
     const std::string &get_name() { return m_name; }
