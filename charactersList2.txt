@@ -1,0 +1,4 @@
+Fabrice;100;3
+Claire;100;2
+Chewitt;50;1
+Blake;100;0

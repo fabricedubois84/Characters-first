@@ -1,0 +1,5 @@
+1;Rusty Sword;1;Nothing
+2;Steel Sword;2;Nothing
+3;Small Axe;2;Nothing
+4;Large Axe;3;Nothing
+5;Long Sword;4;Nothing
