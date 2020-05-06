@@ -2,7 +2,7 @@ CXX = g++
 CXXFLAGS = -std=c++11 -Wall -g
 INCLUDES = -I./includes
 #LFLAGS = -L../includes
-SRCS = main.cpp Character.cpp CharactersList.cpp Weapon.cpp WeaponsList.cpp
+SRCS = main.cpp Character.cpp CharactersList.cpp Weapon.cpp WeaponsList.cpp Barbarian.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 EXEC = myGame

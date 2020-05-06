@@ -1,5 +1,6 @@
 #include "CharactersList.h"
 #include "WeaponsList.h"
+#include "Barbarian.h"
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -60,6 +61,11 @@ int main(int argc, char *argv[])
         }
     }
 */
+
+    Character *claire{0};
+    claire = new Barbarian("Claire the Barbarian");
+
+    claire->presentation();
 
     return 0;
 }

@@ -9,6 +9,7 @@
 
 class Character
 {
+protected:
     std::string m_name;
     int m_health;
     Weapon *m_weapon;
@@ -22,9 +23,9 @@ public:
 //    Character(std::vector<std::string> &characterArray);
 
     // Destructor
-    ~Character();
+     ~Character();
 
-    void presentation();
+    virtual void presentation() const;
 
     // Getters
     const std::string &get_name() { return m_name; }
