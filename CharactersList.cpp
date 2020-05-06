@@ -18,8 +18,13 @@ CharactersList::CharactersList()
 
     std::string strInput;
 
+std::cout << "Starting scan of file...--------------------\n";
+int scan{1};
     while ( std::getline(listStream, strInput) )
     {
+std::cout << "\nReading line (" << scan << ")...-------------\n";
+std::cout << "Line: " << strInput << "\n\n";
+++scan;
         std::vector<std::string> player;
 
         if ( strInput.size() > 0 )
@@ -27,11 +32,18 @@ CharactersList::CharactersList()
 //            charsList.push_back(strInput);
             std::stringstream ss(strInput);
             std::string token;
+int counting{0};
             while( std::getline(ss, token, m_delimiter) )
             {
                 player.push_back(token);
-                int tempNum;
-                if ( ! (std::istringstream(token) >> tempNum) ) tempNum = 0;
+//                int tempNum;
+//                if ( ! (std::istringstream(token) >> tempNum) ) tempNum = 0;
+std::cout << "player[" << counting << "] = " << player[counting] << "\n";
+++counting;
+
+//std::cout << "player[1] = " << player[1] << "\n";
+//std::cout << "player[2] = " << player[2] << "\n";
+
             }
 
             m_list.push_back(Character{player[0], stoi(player[1])});

@@ -6,6 +6,7 @@
 Character::Character(std::string name, int health): m_name{name}, m_health{health}, m_weapon{0}
 {
     m_weapon = new Weapon();
+    std::cout << "Character \"" << name << "\" created.\n";
 }
 
 Character::Character( std::string name, std::string health)
@@ -13,6 +14,8 @@ Character::Character( std::string name, std::string health)
     m_name = name;
     m_health = std::stoi(health);
     m_weapon = new Weapon();
+    std::cout << "Character \"" << name << "\" created.\n";
+
 }
 
 /*Character::Character(std::vector<std::string> &characterArray)
@@ -32,9 +35,9 @@ Character::~Character()
 {
     m_weapon = 0;
     delete m_weapon;
-    std::cout << "Character object destroyed\n";
+    std::cout << "Character \"" << m_name << "\" object destroyed\n";
 }
-
+/*
 void Character::presentation() const
 {
     std::cout << "=======================\n";
@@ -48,5 +51,5 @@ void Character::presentation() const
     std::cout << "\t- " << m_weapon->get_description() << "\n";
 
 }
-
+*/
 // Operators

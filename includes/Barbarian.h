@@ -3,18 +3,21 @@
 
 #include "Character.h"
 #include <string>
+#include <iostream>
 
-class Barbarian : Character
+class Barbarian : public Character
 {
     int m_rage;
 
 public:
     Barbarian(std::string name, int health = 100);
 
-     ~Barbarian();
+    virtual ~Barbarian();
 
-    virtual void presentation() const;
-
+    virtual void presentation(std::ostream &os) const;
 };
+
+std::ostream& operator<<(std::ostream &os, const Barbarian& player);
+
 
 #endif // BARBARIAN_H

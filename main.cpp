@@ -18,9 +18,9 @@ void presentationMenu( CharactersList &list );
 
 int main(int argc, char *argv[])
 {
-    int menuChoice{0};
+//    int menuChoice{0};
     CharactersList charactersList;
-
+/*
     do
     {
         menuChoice = menu();
@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
     else {
         std::cout << "Back up of list successful!\n";
     }
-
+*/
 
 /*    if (argc > 1)
     {
@@ -61,12 +61,20 @@ int main(int argc, char *argv[])
         }
     }
 */
+/*
+    Barbarian *claire{0};
+    claire = new Barbarian{"Claire the Barbarian"};
 
-    Character *claire{0};
-    claire = new Barbarian("Claire the Barbarian");
-
-    claire->presentation();
-
+    if ( claire == nullptr )
+    {
+        std::cout << "This is a null pointer nullptr\n";
+    }
+    else
+    {
+        std::cout << *claire << "\n";
+    }
+    delete claire;
+*/
     return 0;
 }
 
@@ -97,14 +105,14 @@ void createMenu( CharactersList &list )
     std::cout << "Type the name of your character: \n";
     std::getline(std::cin, charName);
 
-    if ( charName != "" )
+    if ( !(charName.empty())  )
     {
         Character newPlayer{charName};
         list.addCharacter( newPlayer );
         for ( auto player : list.get_list() )
         {
-            if ( player.get_name() == charName )
-                player.presentation();
+//            if ( player.get_name() == charName )
+//                player.presentation();
         }
     }
 }
@@ -113,6 +121,6 @@ void presentationMenu( CharactersList &list )
 {
     for ( auto player : list.get_list() )
     {
-        player.presentation();
+//        player.presentation();
     }
 }

@@ -1,6 +1,5 @@
 #include "Barbarian.h"
 #include "Character.h"
-#include <string>
 
 Barbarian::Barbarian(std::string name, int health): Character{name, health}, m_rage{1}
 {
@@ -15,8 +14,14 @@ Barbarian::~Barbarian()
 
 }
 
-void Barbarian::presentation() const
+void Barbarian::presentation(std::ostream &os) const
 {
-    Character::presentation();
-    std::cout << "Rage:\t" << m_rage << "\n";
+    //Character::presentation();
+    os << "Rage:\t" << m_rage << "\n";
+}
+
+std::ostream& operator<<(std::ostream& os, const Barbarian & player)
+{
+    player.presentation(os);
+    return os; 
 }
